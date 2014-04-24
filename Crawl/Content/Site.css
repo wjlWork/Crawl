@@ -1,0 +1,268 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.wrap{margin:0 auto;width:960px;} 
+
+.typechk .main {
+    width: 930px;
+    padding: 0 15px;
+    margin: 0 auto;
+    height: 24px;
+}
+
+/* 导航栏
+-----------------------------------------------------------*/
+html *{
+    padding:0;
+    margin:0;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+
+}
+
+.nav{margin-top:200px;}
+
+.nav *{
+    text-decoration:none;
+    font-size:15pt;
+
+}
+
+.nav * a:hover{
+    background-color:#82ce18;/* 鼠标经过时的红色背景，可自定义 */
+
+}
+
+.menu{
+    list-style:none;
+    height:40px;
+    width:100%;
+    background-color:#333;
+    margin-top:0px;
+}
+
+.nav{
+    list-style:none;
+    height:40px;
+    width:1000px;
+    margin:0 auto;
+    background-color:#333;		
+
+}
+
+.nav li{
+    float:left;
+    border-left:1px solid #4a4a4a;
+    border-right:1px solid #242424;
+    border-top:1px solid #4a4a4a;
+    border-bottom:1px solid #242424;
+    position:relative;
+
+}
+
+.nav li a{
+    color:#fff;
+    height:38px;
+    line-height:38px;
+    font-weight:bold;
+    padding:0 20px;
+
+    display:inline-block;
+}
+
+.nav li a:focus{ 
+    -moz-outline-style: none; 
+}
+
+.nav li .sub-nav{
+    position:absolute;
+    top:39px;
+    left:-1px;
+    list-style:none;
+    background-color:#333;
+    display:none;
+}
+
+.nav li .sub-nav li{
+    text-align:center;
+	clear:left;
+	width:140px;
+	height:35px;
+	line-height:35px;
+	position:relative;
+}
+
+.nav li .sub-nav li a{
+    height:34px;
+	line-height:34px;
+	width:138px;
+	padding:0;
+	display:inline-block;
+}
+
+/* 列表
+-----------------------------------------------------------*/
+.ls ul li{
+    list-style:none;
+    height:40px;
+	width:800px;
+    margin:0 auto;
+    background: #CAE8EA url(images/bg_header.jpg) no-repeat; 
+}
+
+ li {   
+   font: 200 20px/1.5 Helvetica, Verdana, sans-serif;   
+   border-bottom: 1px solid #ccc;   
+ } 
+
+ li a {   
+   text-decoration: none;       
+   width: 200px;   
+             
+   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;   
+   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;   
+   -o-transition: font-size 0.3s ease, background-color 0.3s ease;   
+   -ms-transition: font-size 0.3s ease, background-color 0.3s ease;   
+   transition: font-size 0.3s ease, background-color 0.3s ease;   
+ }
+
+  li a:hover {   
+   font-size: 30px;   
+   background: #f6f6f6;   
+ }
+
+
+/* 输入框
+-----------------------------------------------------------*/
+dl{clear:left;}
+dt,dd{float:left;}
+
+.nav_d{
+    list-style:none;
+	height:40px;
+	width:800px;
+	margin:0 auto;
+}
+
+.submit1 { 
+    background:url(../image/uploadfile/1513200969.gif) 0px 0px; 
+    border:1px solid #7AADC8; 
+    width:100px;
+    height:30px; 
+    font-size:18px; 
+    font-weight:bold; 
+    padding-top:2px; 
+    cursor:pointer;
+    margin:0 auto;
+}
+
+.text1 { 
+    height:28px; 
+    border:1px solid #7AADC8; 
+    width:630px;
+}
+
+/* 表格
+-----------------------------------------------------------*/
+body { 
+    font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    color: #4f6b72; 
+    background: #E6EAE9; 
+}
+
+.tb {
+    border-collapse:collapse;
+}
+
+a { 
+    color: #c75f3e; 
+} 
+
+th { 
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    color: #4f6b72; 
+    border-right: 1px solid #C1DAD7; 
+    border-bottom: 1px solid #C1DAD7; 
+    border-top: 1px solid #C1DAD7; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    text-align: left; 
+    padding: 6px 6px 6px 12px; 
+    background: #CAE8EA url(images/bg_header.jpg) no-repeat;
+} 
+ 
+td { 
+    border-right: 1px solid #C1DAD7; 
+    border-bottom: 1px solid #C1DAD7; 
+    background: #fff; 
+    font-size:11px; 
+    padding: 6px 6px 6px 12px; 
+    color: #4f6b72; 
+} 
+ 
+/*去掉li前面的点*/
+ul_li {
+   list-style:none;
+   margin:0; 
+   padding:0;
+}
+ 
+ 

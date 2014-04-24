@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<webconfig>
+  <web>
+    <HomeUrl>Oberon's Legacy</HomeUrl>
+    <Title>Corets, Eva</Title>
+    <ListUrl>5.95</ListUrl>
+    <TitleXpath>5.95</TitleXpath>
+  </web>
+  <android.d.cn>
+    <HomeUrl>http://android.d.cn/news/36</HomeUrl>
+    <Title>http://android.d.cn/news/36</Title>
+    <ListUrl>http://android.d.cn/news/36</ListUrl>
+    <TitleXpath />
+  </android.d.cn>
+  <www.25pp.com>
+    <HomeUrl>http://www.25pp.com/games/list_187.html</HomeUrl>
+    <Title>http://www.25pp.com/games/list_187.html</Title>
+    <ListUrl>http://www.25pp.com/games/list_187.html</ListUrl>
+    <TitleXpath />
+  </www.25pp.com>
+</webconfig>

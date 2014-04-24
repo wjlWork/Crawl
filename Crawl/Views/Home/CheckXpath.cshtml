@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Xpath检测";
+}
+<br><br>
+<div class="nav_d">
+
+<form id="from1" action="~/Home/CheckXpath" method="get">
+    <div class="nav_d">
+        <p><input id="submit1" type="submit" class="submit1" value=" 检 测 " />&nbsp;&nbsp;&nbsp;</p>
+        <p>站&nbsp;&nbsp;点:<input type="text" name="webUrl" class ="text1" size="100"/></p><br />
+        <p>Xpath:<input type="text" name="xpath" class ="text1" size="100"/></p><br />
+    </div>
+</form>
+
+</div>
+
+<div>
+     @ViewBag.html
+</div>

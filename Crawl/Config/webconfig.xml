@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<webconfig>
+  <web>
+    <HomeUrl>Oberon's Legacy</HomeUrl>
+    <Title>Corets, Eva</Title>
+    <ListUrl>5.95</ListUrl>
+    <TitleXpath>5.95</TitleXpath>
+  </web>
+  <www.25pp.com>
+    <HomeUrl>http://www.25pp.com</HomeUrl>
+    <Title>http://www.25pp.com/games/list_187.html</Title>
+    <ListUrl>//div[@id='contentArea']//h4//a</ListUrl>
+    <TitleXpath>//div[@id='artContent']</TitleXpath>
+  </www.25pp.com>
+</webconfig>

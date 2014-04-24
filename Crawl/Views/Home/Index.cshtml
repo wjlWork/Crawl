@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "主页";
+    //string selStatus = TestStatus.Contains(Model.TestStatus) ? Model.TestStatus : "未知";
+}
+<br><br>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#error1').hide();
+        $('#error2').hide();
+
+        $('#submit').click(function (event)
+        {
+            var data = $('#DisPlay_Name').val();
+            data = $.trim(data);
+            if (data.length < 1)
+            {
+                $('#error1').show();
+                event.preventDefault();
+            }
+            else
+            {
+                $('#error1').hide();
+            }
+            if ($("input[type='checkbox']").is(':checked'))
+            {
+                $('#error2').hide();
+            }
+            else
+            {
+                $('#error2').show();
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+<div class="nav_d">
+<form id="from1" action="~/Home/GetTitle" method="get">
+    <dl class="nav_d">
+        <dt><input id="submit1" type="submit" class="submit1" value=" 获 取 " />&nbsp;&nbsp;&nbsp;</dt>
+        <dt>
+            <select name="UrlSelect" class ="text1">
+            @foreach (var ls in ViewBag.Items)
+            {
+                if (ls.ListUrl == ViewBag.ListUrl)
+                {
+                    <option selected="selected" value ="@ls.ListUrl">@ls.WebName</option>    
+                }
+                else
+                {
+                    <option value ="@ls.ListUrl">@ls.WebName</option> 
+                }
+            }
+            </select>
+        </dt>
+    </dl>
+</form>
+</div>
+@if (Model != null)
+{
+    <form id="form2" action="~/Home/GetContent"  method="post">
+      <div class="ls">
+        <ul>
+        @foreach (var o in Model)
+        {
+              <li>
+                <p style="display:inline;text-align:right;">
+                   <label><input type="checkbox" name="UrlValue" id="UrlValue" value ="@o.Url|@o.TitleName" style="zoom:150%" /><a href="@o.Url" target="_blank" style="width:300px; line-height:25px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">@o.TitleName</a></label>
+                </p>
+
+                <p style="display:inline;font-size:10px;float:right;">
+                   水印位置：
+                   <label><input name="@o.Url|@o.TitleName" type="radio" value="WM_BOTTOM_RIGHT" checked="checked" />右下</label>
+                   <label><input name="@o.Url|@o.TitleName" type="radio" value="WM_BOTTOM_LEFT"/>左下</label>
+                   <label><input name="@o.Url|@o.TitleName" type="radio" value="WM_TOP_RIGHT" />右上</label>
+                   <label><input name="@o.Url|@o.TitleName" type="radio" value="WM_TOP_LEFT" />左上</label>
+                </p>
+             </li>           
+        }
+        </ul>
+      </div>
+      <br />
+       <div>
+            <input type="text" name="ListUrl" value ="@ViewBag.ListUrl" style="display:none" />
+       </div>
+        
+
+      <div class="nav_d">
+        <input type="submit" id="submit" class="submit1" value="保存文章"/>&nbsp;&nbsp;&nbsp;
+        请输入昵称：<input type="text" name="DisPlay_Name" id="DisPlay_Name"/><p id="error1" style="color:red">请输入昵称</p><p id="error2" style="color:red">请选择项</p>
+      </div>
+        <br><br>
+    </form>
+    
+    <form id="form3" action="~/Home/Pager">
+    <div class="none">
+   </div>
+   </form>
+}
+else
+{
+      <div class="nav_d">
+        <ul>
+            <li class="ul_li">暂无标题,请点击获取</li>                
+        </ul>
+      </div>
+}
+

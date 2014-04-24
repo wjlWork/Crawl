@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "新增配置";
+    if(Model!=null)
+    {
+        ViewBag.HomeUrl = Model.HomeUrl;
+        ViewBag.ListUrl = Model.ListUrl;
+        ViewBag.WebName = Model.WebName;
+        ViewBag.ListXpath = Model.ListXpath;
+        ViewBag.ListPageXpath = Model.ListPageXpath;
+        ViewBag.ArtXpath = Model.ArtXpath;
+        ViewBag.PageXpath = Model.PageXpath;
+        ViewBag.UpdatePath = Model.UpdatePath;
+        ViewBag.Location = Model.Location;
+    }
+    else
+    {
+        ViewBag.HomeUrl = "";
+        ViewBag.ListUrl = "";
+        ViewBag.WebName = "";
+        ViewBag.ListXpath = "";
+        ViewBag.ArtXpath = "";
+        ViewBag.ListPageXpath = "";
+        ViewBag.PageXpath = "";
+        ViewBag.UpdatePath = "";
+        ViewBag.Location = "";
+    }
+}
+<br><br>
+<div class="nav_d">
+<form id="from1" action="~/Home/CreateConfig" method="get">
+    @if(ViewBag.id=="update")
+    {
+        <p>主页URL：&nbsp;&nbsp;<input type="text" name="SouUrl" size="100" readonly="true" value="@ViewBag.HomeUrl" class="text1"/></p><br>
+    }
+    else
+    {
+        <p>主页URL：&nbsp;&nbsp;<input type="text" name="SouUrl" size="100" value="@ViewBag.HomeUrl" class="text1"/></p><br>
+    }
+    <p>列表URL：&nbsp;&nbsp;<input type="text" name="ListUrl" size="100" value="@ViewBag.ListUrl" class="text1"/></p><br>
+    <p>网站名称：&nbsp; <input type="text" name="WebName" size="100" value="@ViewBag.WebName" class="text1"/></p><br>
+    <p>列表Xpath：<input type="text" name="ListReg" size="100" value="@ViewBag.ListXpath" class="text1"/></p><br>
+    <p>文章Xpath：<input type="text" name="ArtReg" size="100" value="@ViewBag.ArtXpath" class="text1"/></p><br>
+    <p>列表分页 ： <input type="text" name="ListPageReg" size="100" value="@ViewBag.ListPageXpath" class="text1"/></p><br>
+    <p>文章分页 ： <input type="text" name="PageReg" size="100" value="@ViewBag.PageXpath" class="text1"/></p><br>
+    <p>更新路径：&nbsp; <input type="text" name="UpdatePath" size="100" value="@ViewBag.UpdatePath" class="text1"/></p><br>
+    <p>水印位置：&nbsp; <input type="text" name="Location" size="100" value="@ViewBag.Location" class="text1"/></p><br>
+    <input type="submit" value="保存" class="submit1" /><br>
+</form>
+</div>

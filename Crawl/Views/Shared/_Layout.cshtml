@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+<div class="menu">
+<ul class="nav">
+	<li><a href="~/Home/Index" style="text-align:center">Ö÷Ò³</a></li>
+	<li><a href="~/Home/LoginList" style="text-align:center">ÅäÖÃÕ¾µã</a></li>
+	<li><a href="~/Home/CheckXpath" style="text-align:center">XPath¼ì²â</a></li>
+    <li><a href="~/Home/a_Art" style="text-align:center">µ¥Æª×ªÔØ</a></li>
+</ul>
+</div>
+
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+</body>
+</html>

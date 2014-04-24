@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "单篇转载";
+}
+<br><br>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#error1').hide();
+        $('#error2').hide();
+        $('#submit3').click(function (event)
+        {
+            var data1 = $('#DisPlay_Name').val();
+            var data2 = $('#ArtUrl').val();
+            data1 = $.trim(data1);
+            data2 = $.trim(data2);
+
+            if (data1.length < 1)
+            {
+                $('#error1').show();
+                event.preventDefault();
+            }
+            else
+            {
+                $('#error1').hide();
+            }
+
+            if (data2.length< 1)
+            {
+                $('#error2').show();
+                event.preventDefault();
+            }
+            else
+            {
+                $('#error2').hide();         
+            }
+        });
+    });
+</script>
+<div class="nav_d">
+<form id="from2" action="~/Home/Art" method="get">
+    <div>
+        <p><input id="submit3" type="submit" class="submit1" value=" 保 存 " />&nbsp;&nbsp;&nbsp;</p><br><br><p>输入文章地址和昵称，可以转载支持网站列表的文章</p>
+        <br>
+        <p>
+           水印位置：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <label><input name="ImgWaterMark" type="radio" value="WM_BOTTOM_RIGHT" checked="checked" />右下角 </label>
+           <label><input name="ImgWaterMark" type="radio" value="WM_BOTTOM_LEFT" />左下角 </label>
+           <label><input name="ImgWaterMark" type="radio" value="WM_TOP_RIGHT" />右上角 </label>
+           <label><input name="ImgWaterMark" type="radio" value="WM_TOP_LEFT" />左上角 </label>
+        </p>
+        <p>地&nbsp;&nbsp;址:<input type="text" name="ArtUrl" id="ArtUrl" class ="text1" size="100"/></p><br />
+        <p>昵&nbsp;&nbsp;称:<input type="text" name="DisPlay_Name" id="DisPlay_Name" class ="text1" size="100"/></p><br />
+        <p id="error1" style="color:red;display:inline">请输入昵称</p>&nbsp;&nbsp;&nbsp;
+        <p id="error2" style="color:red;display:inline">请输入地址</p>
+    </div>
+</form>
+</div>
+<div>
+     @ViewBag.html
+</div>
