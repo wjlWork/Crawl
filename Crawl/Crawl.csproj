@@ -203,6 +203,7 @@
     <Content Include="Content\Site.css" />
     <None Include="Properties\PublishProfiles\CrawlConfig.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -218,6 +219,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\popwin.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -241,6 +243,7 @@
     <Content Include="Views\Home\ConfigList.cshtml" />
     <Content Include="Views\Home\LoginList.cshtml" />
     <Content Include="Views\Home\a_Art.cshtml" />
+    <Content Include="Views\Home\WatermarkConfig.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

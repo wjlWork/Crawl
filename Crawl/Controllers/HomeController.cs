@@ -78,7 +78,7 @@ namespace Crawl.Controllers
                 if (!string.IsNullOrEmpty(ArtUrl))
                 {
                     //str = Request.QueryString["UrlValue"];
-                    str = Request.Form.GetValues(0);
+                    str = Request.Form.GetValues("UrlValue");
                     for (int i = 0; i < str.LongLength; i++)
                     {
                         string[] UrlTitle = str[i].Split('|');
@@ -270,7 +270,14 @@ namespace Crawl.Controllers
             return View("GetTitle");
         }
 
-
+        /// <summary>
+        /// 水印配置
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult WatermarkConfig()
+        {
+            return View();
+        }
 
 
     }

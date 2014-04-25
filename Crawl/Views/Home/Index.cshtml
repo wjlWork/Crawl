@@ -3,6 +3,7 @@
     //string selStatus = TestStatus.Contains(Model.TestStatus) ? Model.TestStatus : "未知";
 }
 <br><br>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('#error1').hide();
@@ -31,8 +32,13 @@
                 event.preventDefault();
             }
         });
+
+        $("a").on('click' , function(){
+            popWin.showWin("800", "600", "iframe弹出层jquery特效代码", "http://localhost:6466/Home/CreateConfig");
+        });
     });
 </script>
+<a href="javascript:void(0)">点击弹出iframe层</a>
 <div class="nav_d">
 <form id="from1" action="~/Home/GetTitle" method="get">
     <dl class="nav_d">

@@ -2,12 +2,13 @@
     ViewBag.Title = "站点配置";
 }
 <br />
-<div class="nav_d">
-<p style="font-size:25px">
-    @Html.ActionLink("增加", "CreateConfig")
-</p>
-<br />
-<table class="tb">
+@*<div class="nav_d">*@
+<table id="configList" class="tb">
+    <caption style="border:0px solid red;">
+        <span style="font-size:25px;float:left;">@Html.ActionLink("增加", "CreateConfig")</span>
+
+        <span style="font-size:25px;float:left;">@Html.ActionLink("水印位置配置", "WatermarkConfig")</span>
+    </caption>  
     <tr>
         <th>
            网站名：
@@ -52,5 +53,5 @@
     }
 }
 </table>
-</div>
+@*</div>*@
 
