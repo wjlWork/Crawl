@@ -22,8 +22,9 @@ namespace Crawl.Controllers
             return View();
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int id=0)
         {
+            var Id = id;
             ViewBag.Items =WebConfig.Select();
 
             return View();
@@ -42,18 +43,18 @@ namespace Crawl.Controllers
             ViewBag.ListUrl = SourUrl;
             WebConfig config = WebConfig.SelectListCon(SourUrl);
             //获取列表的Xpath表达式
-            List<Title> title = null;
+            List<Title> titles = null;
 
             if (!string.IsNullOrEmpty(SourUrl) && config != null)
             {
-                title = Title.Multi_Page(SourUrl, config,2);
-                if (title.Count == 0)
+                titles = Title.Multi_Page(SourUrl, config,2);
+                if (titles.Count == 0)
                 {
-                    title = null;
+                    titles = null;
                 }
             }
 
-            return View("Index", title);
+            return View("Index", titles);
         }
 
         /// <summary>
@@ -102,8 +103,6 @@ namespace Crawl.Controllers
 
                         //Response.Redirect(post.Guid);
                         Response.Write(ht);
-                        //Page.ClientScript.RegisterStartupScript(this.GetType(), "", " <script type='text/JavaScript'>window.open('" + post.Guid + "'); </script>");
-                        //Helpers.DefaultBrowser(post.Guid);
                         if (!post.IsExist)
                         {
                             ViewBag.isExist = "昵称不存在";
@@ -120,8 +119,18 @@ namespace Crawl.Controllers
             {
                 DateTime time = DateTime.Now;
                 Helpers.WriteLog(time.ToString(), ex.ToString());
-            }      
-            return View("GetTitle");
+            }
+
+            string script = String.Format("<script>alert('保存失败');location.href='{0}'</script>", Url.Action("index")); 
+            if (ViewBag.isExist == "保存成功")
+            {
+                script = String.Format("<script>alert('保存成功');location.href='{0}'</script>", Url.Action("index", new { id = "2"}));
+                return Content(script, "text/html");
+            }
+
+            return JavaScript(script);
+
+            //return View("GetTitle");
         }
 
         /// <summary>

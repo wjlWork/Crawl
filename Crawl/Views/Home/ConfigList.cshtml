@@ -1,13 +1,26 @@
 ﻿@{
     ViewBag.Title = "站点配置";
 }
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#addConfig").on('click', function () {
+            popWin.showWin("800", "600", "增加配置项", "http://localhost:6466/Home/CreateConfig");
+        });
+
+        $("#Watermark").on('click', function () {
+            popWin.showWin("800", "600", "水印位置配置", "http://localhost:6466/Home/WatermarkConfig");
+        });
+    });
+</script>
 <br />
 @*<div class="nav_d">*@
 <table id="configList" class="tb">
     <caption style="border:0px solid red;">
-        <span style="font-size:25px;float:left;">@Html.ActionLink("增加", "CreateConfig")</span>
-
-        <span style="font-size:25px;float:left;">@Html.ActionLink("水印位置配置", "WatermarkConfig")</span>
+@*      <span style="font-size:25px;float:left;">@Html.ActionLink("增加", "CreateConfig")</span>
+        <span style="font-size:25px;float:left;">@Html.ActionLink("水印位置配置", "WatermarkConfig")</span>*@
+        <span style="float:left;"><input type="submit" id="addConfig" value="增加" /></span>
+        <span style="float:left;"><input type="submit" id="Watermark" value="水印位置配置" /></span>
+        
     </caption>  
     <tr>
         <th>
