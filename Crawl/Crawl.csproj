@@ -208,6 +208,7 @@
     <None Include="Properties\PublishProfiles\CrawlConfig.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="Scripts\CrawlJs.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -222,6 +223,18 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\layer\extend\layer.ext.js" />
+    <Content Include="Scripts\layer\layer.js" />
+    <Content Include="Scripts\layer\layer.min.js" />
+    <Content Include="Scripts\layer\skin\default\textbg.png" />
+    <Content Include="Scripts\layer\skin\default\xubox_ico0.png" />
+    <Content Include="Scripts\layer\skin\default\xubox_loading0.gif" />
+    <Content Include="Scripts\layer\skin\default\xubox_loading1.gif" />
+    <Content Include="Scripts\layer\skin\default\xubox_loading2.gif" />
+    <Content Include="Scripts\layer\skin\default\xubox_loading3.gif" />
+    <Content Include="Scripts\layer\skin\default\xubox_title0.png" />
+    <Content Include="Scripts\layer\skin\layer.css" />
+    <Content Include="Scripts\layer\skin\layer.ext.css" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\popwin.js" />
     <Content Include="Scripts\_references.js" />

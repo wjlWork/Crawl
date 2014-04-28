@@ -12,7 +12,9 @@ namespace Crawl
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/popwin").Include(
-            "~/Scripts/popwin.js"));
+            "~/Scripts/popwin.js", 
+            "~/Scripts/layer/layer.min.js",
+            "~/Scripts/CrawlJs.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));

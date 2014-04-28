@@ -26,7 +26,7 @@ namespace Crawl
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            DataAccess.Register(new MySqlProvider(Configuration.GetConfigValue("conn")));
+            //DataAccess.Register(new MySqlProvider(Configuration.GetConfigValue("conn")));
             DataAccess.Register(new MySqlProvider(Configuration.GetConfigValue("chaohaowan")));
         }
     }

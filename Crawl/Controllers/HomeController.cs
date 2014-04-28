@@ -121,16 +121,16 @@ namespace Crawl.Controllers
                 Helpers.WriteLog(time.ToString(), ex.ToString());
             }
 
-            string script = String.Format("<script>alert('保存失败');location.href='{0}'</script>", Url.Action("index")); 
-            if (ViewBag.isExist == "保存成功")
-            {
-                script = String.Format("<script>alert('保存成功');location.href='{0}'</script>", Url.Action("index", new { id = "2"}));
-                return Content(script, "text/html");
-            }
+            //string script = String.Format("<script>alert('保存失败');location.href='{0}'</script>", Url.Action("index")); 
+            //if (ViewBag.isExist == "保存成功")
+            //{
+            //    script = String.Format("<script>alert('保存成功');location.href='{0}'</script>", Url.Action("index", new { id = "2"}));
+            //    return Content(script, "text/html");
+            //}
 
-            return JavaScript(script);
+            //return JavaScript(script);
 
-            //return View("GetTitle");
+            return View("GetTitle");
         }
 
         /// <summary>
