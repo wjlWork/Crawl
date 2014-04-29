@@ -271,3 +271,15 @@ ul_li {
  margin: 0 auto; 
 } 
  
+
+#WatermarkC{  
+ width: 700px;  
+ padding: 0;  
+ margin: 0 auto; 
+}
+
+.table_center {
+    width: 700px;  
+    padding: 0;  
+    margin: 0 auto; 
+}

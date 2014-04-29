@@ -1,0 +1,72 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/popwin")
+    <meta name="viewport" content="width=device-width" />
+    <title>WatermarkConfig</title>
+</head>
+
+<body>
+<br /><br />
+@if(Model!=null)
+{
+<form action="~/Watermark/WatermarkConfig" method="get">
+<table id="WatermarkC" class="tb">
+    <tr>
+        <th>站点名称</th>
+        <th>
+            <select id="SiteOption" name="SiteName" class="text1">
+            @foreach(WebConfig o in Model)
+            {
+                <option selected="selected" value="@o.ListUrl">@o.WebName</option>
+             }
+            </select>
+        </th>
+    </tr>
+    
+    <tr>
+        <th>水印X坐标</th>
+        <th><input type="text" name="WaterMark_X" size="100" class="text1"/></th>
+    </tr>
+    
+    <tr>
+        <th>水印Y坐标</th>
+        <th><input type="text" name="WaterMark_Y" size="100" class="text1"/></th>
+    </tr>
+    
+    <tr>
+        <th>水印长度</th>
+        <th><input type="text" name="WaterMark_H" size="100" class="text1"/></th>
+    </tr>
+    <tr>
+        <th>水印宽度</th>
+        <th><input type="text" name="WaterMark_W" size="100" class="text1"/></th>
+    </tr>
+    <tr>
+        <th><input type="submit" value="保存" class="submit1" /></th>
+        <th></th>
+    </tr>
+</table>
+</form>
+}
+else
+{
+    <table class="table_center">
+        <tr>
+            <th><p></p></th>
+            <th><input type="submit" value="保存" class="submit1" /></th>
+            <th></th>
+        </tr>
+    </table>
+}
+
+
+
+</body>
+</html>

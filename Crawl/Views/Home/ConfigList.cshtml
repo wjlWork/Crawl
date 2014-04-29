@@ -8,9 +8,13 @@
         });
 
         $("#Watermark").on('click', function () {
-            popWin.showWin("800", "600", "水印位置配置", "http://localhost:6466/Home/WatermarkConfig");
+            popWin.showWin("800", "600", "水印位置配置", "http://localhost:6466/Watermark/Index");
         });
     });
+
+    function updatedata(id,url) {
+        popWin.showWin("800", "600", "修改配置项", "http://localhost:6466/Home/CreateConfig?id=" + id + "&url=" + url);
+    }
 </script>
 <br />
 @*<div class="nav_d">*@
@@ -45,7 +49,7 @@
     foreach (var item in Model) {
     <tr>
         <td>
-           <p>@item.WebName</p>
+           <p ><a onclick="updatedata('update','@item.HomeUrl')">@item.WebName</a></p>
         </td>
         <td>
            <p>@item.HomeUrl</p>
@@ -60,7 +64,8 @@
             <p>@item.ArtXpath</p>
         </td>
         <td>
-            @Html.ActionLink("修改", "CreateConfig", new { id = "update",url=item.HomeUrl })
+            <input type="submit" value="修改" onclick="updatedata('update','@item.HomeUrl')" />
+           @* @Html.ActionLink("修改", "CreateConfig", new { id = "update",url=item.HomeUrl } new{onclick="updatedata"})*@
         </td>
     </tr>
     }

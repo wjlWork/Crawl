@@ -50,6 +50,18 @@ namespace Crawl.Models
         [Map("location")]
         public string Location { get; set; }
 
+        [Map("watermark_x")]
+        public int Watermark_X { get; set; }
+
+        [Map("watermark_y")]
+        public int Watermark_Y { get; set; }
+
+        [Map("watermark_h")]
+        public int Watermark_H { get; set; }
+
+        [Map("watermark_w")]
+        public int Watermark_W { get; set; }
+
 
         //查询
         public static List<WebConfig> Select()
@@ -71,7 +83,7 @@ namespace Crawl.Models
         }
 
         //根据文章列表地址获取配置对象
-        public static WebConfig SelectListCon(string url)
+        public static WebConfig ConfigFormUrl(string url)
         {
             var o = Table.Object<WebConfig>()
                          .Where(m => m.ListUrl, url)
@@ -79,6 +91,15 @@ namespace Crawl.Models
 
             return o;
         }
+
+        public static void Update(WebConfig config)
+        {
+            if (config != null)
+            {
+                DataAccess.Update(config);
+            }
+        }
+
 
         //增加、修改
         public static void Update()

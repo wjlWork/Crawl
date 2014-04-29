@@ -41,7 +41,7 @@ namespace Crawl.Controllers
             //根据网站文章列表地址获取网站配置对象
             string SourUrl = Request.QueryString["UrlSelect"];
             ViewBag.ListUrl = SourUrl;
-            WebConfig config = WebConfig.SelectListCon(SourUrl);
+            WebConfig config = WebConfig.ConfigFormUrl(SourUrl);
             //获取列表的Xpath表达式
             List<Title> titles = null;
 
@@ -73,7 +73,7 @@ namespace Crawl.Controllers
                 string ArtUrl = Request.Form["UrlValue"];
 
                 //根据标题列表页面URL获取页面配置对象config
-                WebConfig config = WebConfig.SelectListCon(listUrl);
+                WebConfig config = WebConfig.ConfigFormUrl(listUrl);
                 string[] str;
                 //获取文章的html
                 if (!string.IsNullOrEmpty(ArtUrl))
@@ -203,7 +203,7 @@ namespace Crawl.Controllers
             {
                 string[] ArtUrls = ArtUrl.Split('|');
                 //根据标题列表页面URL获取页面配置对象config
-                config = WebConfig.SelectListCon(ArtUrls[0]);
+                config = WebConfig.ConfigFormUrl(ArtUrls[0]);
                 for (int i = 1; i < ArtUrls.Length; i++)
                 {                        
                     //获取文章对象
