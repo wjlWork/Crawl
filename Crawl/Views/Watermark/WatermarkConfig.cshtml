@@ -22,32 +22,26 @@
         <th>站点名称</th>
         <th>
             <select id="SiteOption" name="SiteName" class="text1">
-            @foreach(WebConfig o in Model)
-            {
-                <option selected="selected" value="@o.ListUrl">@o.WebName</option>
-             }
+                <option selected="selected" value="@Model.ListUrl">@Model.WebName</option>
             </select>
         </th>
-    </tr>
-    
+    </tr>  
     <tr>
         <th>水印X坐标</th>
-        <th><input type="text" name="WaterMark_X" size="100" class="text1"/></th>
-    </tr>
-    
+        <th><input type="text" name="WaterMark_X" size="100" class="text1"/ value="@Model.Watermark_X"></th>
+    </tr>    
     <tr>
         <th>水印Y坐标</th>
-        <th><input type="text" name="WaterMark_Y" size="100" class="text1"/></th>
-    </tr>
-    
+        <th><input type="text" name="WaterMark_Y" size="100" class="text1"/ value="@Model.Watermark_Y"></th>
+    </tr>    
     <tr>
         <th>水印长度</th>
-        <th><input type="text" name="WaterMark_H" size="100" class="text1"/></th>
-    </tr>
+        <th><input type="text" name="WaterMark_H" size="100" class="text1"/ value="@Model.Watermark_H"></th>
+    </tr>    
     <tr>
         <th>水印宽度</th>
-        <th><input type="text" name="WaterMark_W" size="100" class="text1"/></th>
-    </tr>
+        <th><input type="text" name="WaterMark_W" size="100" class="text1"/ value="@Model.Watermark_W"></th>
+    </tr>                  
     <tr>
         <th><input type="submit" value="保存" class="submit1" /></th>
         <th></th>
@@ -59,8 +53,8 @@ else
 {
     <table class="table_center">
         <tr>
-            <th><p></p></th>
-            <th><input type="submit" value="保存" class="submit1" /></th>
+            <th></th>
+            <th><input type="submit" value="返回" class="submit1" onclick="watermarkconfig('update','@Model.ListUrl')" />保存成功</th>
             <th></th>
         </tr>
     </table>

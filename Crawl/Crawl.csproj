@@ -261,6 +261,7 @@
     <Content Include="Views\Home\LoginList.cshtml" />
     <Content Include="Views\Home\a_Art.cshtml" />
     <Content Include="Views\Watermark\WatermarkConfig.cshtml" />
+    <Content Include="Views\Watermark\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

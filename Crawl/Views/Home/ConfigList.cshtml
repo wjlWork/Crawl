@@ -1,21 +1,7 @@
 ﻿@{
     ViewBag.Title = "站点配置";
 }
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#addConfig").on('click', function () {
-            popWin.showWin("800", "600", "增加配置项", "http://localhost:6466/Home/CreateConfig");
-        });
 
-        $("#Watermark").on('click', function () {
-            popWin.showWin("800", "600", "水印位置配置", "http://localhost:6466/Watermark/Index");
-        });
-    });
-
-    function updatedata(id,url) {
-        popWin.showWin("800", "600", "修改配置项", "http://localhost:6466/Home/CreateConfig?id=" + id + "&url=" + url);
-    }
-</script>
 <br />
 @*<div class="nav_d">*@
 <table id="configList" class="tb">
@@ -49,7 +35,7 @@
     foreach (var item in Model) {
     <tr>
         <td>
-           <p ><a onclick="updatedata('update','@item.HomeUrl')">@item.WebName</a></p>
+           <p ><a href="javascript:voide(0)" onclick="watermarkconfig('update','@item.ListUrl')">@item.WebName</a></p>
         </td>
         <td>
            <p>@item.HomeUrl</p>

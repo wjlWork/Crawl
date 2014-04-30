@@ -20,8 +20,22 @@
             event.preventDefault();
         }
     });
+
+    $("#addConfig").on('click', function () {
+        popWin.showWin("800", "600", "增加配置项", "http://localhost:6466/Home/CreateConfig");
+    });
+
+    $("#Watermark").on('click', function () {
+        popWin.showWin("800", "600", "水印位置配置", "http://localhost:6466/Watermark/Index");
+    });
 });
 
-//$('#test1').on('click', function () {
-//    layer.msg('Hello layer', 2, -1); //2秒后自动关闭，-1代表不显示图标
-//});
+//打开水印位置配置页面
+function watermarkconfig(actiontype, url) {
+    popWin.showWin("800", "600", "编辑水印位置", "http://localhost:6466/Watermark/WatermarkConfig?actiontype=" + actiontype + "&url=" + url);
+}
+
+//打开网站配置修改页面
+function updatedata(id, url) {
+    popWin.showWin("800", "600", "修改配置项", "http://localhost:6466/Home/CreateConfig?id=" + id + "&url=" + url);
+}

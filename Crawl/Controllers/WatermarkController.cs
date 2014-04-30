@@ -18,30 +18,39 @@ namespace Crawl.Controllers
             return View("WatermarkConfig", wConfs);
         }
 
-        public ActionResult WatermarkConfig()
+        public ActionResult WatermarkConfig(string actiontype,string url)
         {
-            string ListUrl = Request.QueryString["SiteName"];
-            int watermark_X = int.Parse(Request.QueryString["Watermark_X"]);
-            int watermark_Y = int.Parse(Request.QueryString["Watermark_Y"]);
-            int watermark_H = int.Parse(Request.QueryString["Watermark_H"]);
-            int watermark_W = int.Parse(Request.QueryString["Watermark_W"]);
-
-            if (ListUrl != null)
+            List<WebConfig> wConfs = new List<WebConfig>();
+            if (actiontype == "update")
             {
-                WebConfig wConf = WebConfig.ConfigFormUrl(ListUrl);
-                if (wConf != null)
-                {
-                    wConf.Watermark_X = watermark_X;
-                    wConf.Watermark_Y = watermark_Y;
-                    wConf.Watermark_H = watermark_H;
-                    wConf.Watermark_W = watermark_W;
-                }
-                WebConfig.Update(wConf);
+                WebConfig wConf = WebConfig.ConfigFormUrl(url);
+                if (wConf != null) return View(wConf);
             }
             else
             {
-                List<WebConfig> wConfs = WebConfig.Select();
-                return View(wConfs);
+                string ListUrl = Request.QueryString["SiteName"];
+                int watermark_X = int.Parse(Request.QueryString["Watermark_X"]);
+                int watermark_Y = int.Parse(Request.QueryString["Watermark_Y"]);
+                int watermark_H = int.Parse(Request.QueryString["Watermark_H"]);
+                int watermark_W = int.Parse(Request.QueryString["Watermark_W"]);
+
+                if (ListUrl != null)
+                {
+                    WebConfig wConf = WebConfig.ConfigFormUrl(ListUrl);
+                    if (wConf != null)
+                    {
+                        wConf.Watermark_X = watermark_X;
+                        wConf.Watermark_Y = watermark_Y;
+                        wConf.Watermark_H = watermark_H;
+                        wConf.Watermark_W = watermark_W;
+                    }
+                    WebConfig.Update(wConf);
+                }
+                else
+                {
+                    wConfs = WebConfig.Select();
+                    return View(wConfs);
+                }
             }
             return View("WatermarkConfig");
         }
